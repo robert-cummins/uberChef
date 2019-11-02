@@ -1,7 +1,7 @@
 exports.up = function(knex) {
-    return knex.schema.createTable('chef_Cuisine', (table) => {
-        table.integer('cuisine_id')
+    return knex.schema.createTable('chefCuisine', (table) => {
         table.integer('chef_id')
+        table.integer('cuisine_id')
     })
   };
   
