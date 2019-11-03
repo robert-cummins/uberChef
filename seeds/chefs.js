@@ -9,7 +9,7 @@ exports.seed = function(knex) {
         {chef_id: 101, name: "Rohan", location: "wellington"},
         {chef_id: 102, name: "Kelly", location: "wellington"},
         {chef_id: 103, name: "Ming", location: "wellington"},
-        {chef_id: 104, name: "Yoga teacher", location: "wellington"},
+        {chef_id: 104, name: "Han", location: "wellington"},
       ]);
     });
 };
