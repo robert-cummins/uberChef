@@ -15,27 +15,30 @@ function getChefsByLocation(location, db = database){
     .where('location', location)
     .select()
 }
-//Fix this function. Probably a double join like below
-// function getChefsByCuisine(chefId, db = database){
-//     return db('Cuisine')
-//     .where('chef_id', chefId)
-//     .select()
-//     .then(data => {console.log(data)})
-// }
+
+function getChefsByCuisine(cuisineId, db = database){
+    return db('cuisine')
+    .leftJoin('chefCuisine', 'chefCuisine.cuisine_id', 'cuisine.cuisine_id')
+    .leftJoin('chefs', "chefCuisine.chef_id", 'chefs.chef_id')
+    .where('cuisine.cuisine_id', cuisineId)
+    .then(data => {console.log(data)})
+}
 
 function getChefCuisines(chefId, db = database){
     return db('chefs')
     .leftJoin('chefCuisine', 'chefCuisine.chef_id', 'chefs.chef_id')
     .leftJoin('cuisine', "chefCuisine.cuisine_id", 'cuisine.cuisine_id')
     .where('chefs.chef_id', chefId)
+    .then(el =>{console.log(el)})
     
 }
 
+getChefsByCuisine(201, db = database)
 
 module.exports = {
     getAllChefs,
     getAllCuisines,
     getChefsByLocation,
-    // getChefsByCuisine,
+    getChefsByCuisine,
     getChefCuisines
 }

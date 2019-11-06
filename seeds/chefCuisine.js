@@ -7,7 +7,7 @@ exports.seed = function(knex) {
       return knex('chefCuisine').insert([
         {chefCuisine_id: 300, chef_id: 100, cuisine_id: 201},
         {chefCuisine_id: 301, chef_id: 100, cuisine_id: 204},
-        {chefCuisine_id: 302, chef_id: 100, cuisine_id: 201},
+        {chefCuisine_id: 302, chef_id: 100, cuisine_id: 207},
         {chefCuisine_id: 303, chef_id: 101, cuisine_id: 203},
         {chefCuisine_id: 304, chef_id: 101, cuisine_id: 202},
         {chefCuisine_id: 305, chef_id: 101, cuisine_id: 206},
