@@ -33,7 +33,7 @@ function getChefCuisines(chefId, db = database){
     
 }
 
-getChefsByCuisine(201, db = database)
+
 
 module.exports = {
     getAllChefs,
