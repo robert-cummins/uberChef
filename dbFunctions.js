@@ -6,6 +6,12 @@ function getAllChefs(db = database){
     return db('chefs').select()
 }
 
+function getChefById(id, db=database){
+    return db('chefs')
+    .where('chef_id', id)
+    .first()
+}
+
 function getAllCuisines(db = database){
     return db('cuisine').select()
 }
@@ -40,5 +46,6 @@ module.exports = {
     getAllCuisines,
     getChefsByLocation,
     getChefsByCuisine,
-    getChefCuisines
+    getChefCuisines,
+    getChefById
 }
