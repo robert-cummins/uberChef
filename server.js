@@ -14,14 +14,6 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.use('/', home)
 
-// app.get('/', (req, res) =>{
-//   db.getAllChefs()
-//   .then(chefs => {
-//     console.log(chefs)
-//     res.render('home', {chefs: chefs})
-//   })  
-  
-// })
 
 
 module.exports = app

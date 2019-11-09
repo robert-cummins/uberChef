@@ -29,3 +29,18 @@
 .jumbo-header{
     margin-top: 17%;
 }
+
+.chef-img {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.chef-container{
+   margin: 0 5% 20px 5%;
+}
+
+.chef-name{
+    text-align: center;
+    margin-top: 10px;
+}

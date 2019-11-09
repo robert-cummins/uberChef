@@ -1,6 +1,15 @@
 
 {{>jumbotron}}
-{{#each chefs}}
-<p>{{name}}</p>
-<img src="{{img}}" alt="{{name}}">
-{{/each}}
+
+    <div class="row chef-container">
+        {{#each chefs}}
+        <div class="col-3">
+            <p class="chef-name">{{name}}</p>
+            <a href="#"><img class="chef-img" src="{{img}}" alt="{{name}}"></a>
+        </div>
+        {{/each}}
+        
+    </div>
+    
+
+
