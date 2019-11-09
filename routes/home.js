@@ -10,4 +10,13 @@ router.get('/', (req, res) =>{
   })  
   
 })
+
+router.get("/:id", (req, res) =>{
+    let id = req.params.id
+    db.getChefById(id)
+    .then(chef =>{
+        console.log(chef)
+        res.render('chef', {chef: chef} )
+    })
+  })
 module.exports = router
