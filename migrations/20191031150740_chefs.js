@@ -4,6 +4,7 @@ exports.up = function(knex) {
       table.increments('chef_id')
       table.string('name')
       table.string('location')
+      table.string('img')
   })
 };
 
