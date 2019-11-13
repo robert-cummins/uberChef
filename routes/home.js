@@ -3,15 +3,19 @@ const router = express.Router()
 const db = require('../dbFunctions')
 
 router.get('/', (req, res) =>{
-  db.getAllChefs()
-  .then(chefs => {
-    console.log(chefs)
-    res.render('home', {chefs: chefs})
-  })  
-  
+  res.render('home')
 })
 
 router.get("/:id", (req, res) =>{
+    let location = req.params.id
+    db.getChefsByLocation(location)
+    .then(chef =>{
+        
+        res.render('location', {chefs: chef} )
+    })
+  })
+
+  router.get("/:id/:id", (req, res) =>{
     let id = req.params.id
     db.getChefById(id)
     .then(chef =>{
@@ -19,4 +23,8 @@ router.get("/:id", (req, res) =>{
         res.render('chef', {chef: chef} )
     })
   })
+
+
+
 module.exports = router
+
