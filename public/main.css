@@ -52,3 +52,7 @@ body {
     width: 28vw;
     margin-top: 10vh;
 }
+
+.main-select{
+    margin-right: 5px;
+}
