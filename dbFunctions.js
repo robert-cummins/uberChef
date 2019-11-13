@@ -34,7 +34,6 @@ function getChefsByCuisineAndLocation(cuisineId, location, db = database){
     const baseQuery = db('cuisine')
     .leftJoin('chefCuisine', 'chefCuisine.cuisine_id', 'cuisine.cuisine_id')
     .leftJoin('chefs', "chefCuisine.chef_id", 'chefs.chef_id')
-
     if(cuisineId) baseQuery.where('cuisine.cuisine_id', cuisineId)
 
     if(location) baseQuery.where('chefs.location', location)
@@ -47,7 +46,7 @@ function getChefCuisines(chefId, db = database){
     .leftJoin('chefCuisine', 'chefCuisine.chef_id', 'chefs.chef_id')
     .leftJoin('cuisine', "chefCuisine.cuisine_id", 'cuisine.cuisine_id')
     .where('chefs.chef_id', chefId)
-    .then(el =>{console.log(el)})
+    .then(el =>{})
     
 }
 
@@ -62,3 +61,15 @@ module.exports = {
     getChefById,
     getChefsByCuisineAndLocation
 }
+
+// function getChefsByCuisineAndLocation(cuisineId, location, db = database){
+//     const baseQuery = db('cuisine')
+//     .leftJoin('chefCuisine', 'chefCuisine.cuisine_id', 'cuisine.cuisine_id')
+//     .leftJoin('chefs', "chefCuisine.chef_id", 'chefs.chef_id')
+
+//     if(cuisineId) baseQuery.where('cuisine.cuisine_id', cuisineId)
+
+//     if(location) baseQuery.where('chefs.location', location)
+
+//     return baseQuery.then(data => {console.log(data)})
+// }

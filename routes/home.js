@@ -8,11 +8,20 @@ router.get('/', (req, res) =>{
 
 router.get("/:id", (req, res) =>{
     let location = req.params.id
-    db.getChefsByLocation(location)
-    .then(chef =>{
-        
+    if(req.query.cuisine_id !== undefined){
+      db.getChefsByCuisineAndLocation(req.query.cuisine_id, location)
+      .then(chef => {
+        console.log(chef)
+        res.render('location', {chefs: chef})
+      })
+    } else {
+
+      db.getChefsByLocation(location)
+      .then(chef =>{
         res.render('location', {chefs: chef} )
-    })
+      })
+    }
+    
   })
 
   router.get("/:id/:id", (req, res) =>{
