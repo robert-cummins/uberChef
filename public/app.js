@@ -28,6 +28,6 @@ cuisineSubmit.addEventListener('click', () =>{
     console.log(url)
     let selectedCuisine = cuisineSelect.value
     console.log(selectedCuisine)
-    cuisineForm.action =  `${selectedCity}/ ${selectedCuisine}`
+    cuisineForm.action =  `${selectedCity}${selectedCuisine}`
     console.log(cuisineForm.action)
 })
