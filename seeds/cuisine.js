@@ -13,7 +13,7 @@ exports.seed = function(knex) {
         {cuisine_id: 206, cuisine: 'Japenese'},
         {cuisine_id: 207, cuisine: 'American'},
         {cuisine_id: 208, cuisine: 'Malaysian'},
-        {cuisine_id: 209, cuisine: 'Island'},
+        {cuisine_id: 209, cuisine: 'Pacific Island'},
         {cuisine_id: 210, cuisine: 'Greek'},
       ]);
     });
