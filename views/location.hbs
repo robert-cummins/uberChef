@@ -1,8 +1,24 @@
 <div class="row chef-container">
     {{#each chefs}}
     <div class="col-3">
-        <p class="chef-name">{{name}}</p>
         <a href="{{location}}/{{chef_id}}"><img class="chef-img" src="{{img}}" alt="{{name}}"></a>
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="chef-name">{{name}}</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="cuisine-container">
+                    <img class="icon" src="/images/chef.png"> 
+                    <p class="cuisine-text">{{cuisine}}</p>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
+        
     </div>
     {{/each}}
 </div>

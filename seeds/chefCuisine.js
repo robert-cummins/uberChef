@@ -1,6 +1,6 @@
 const faker = require('faker')
 
-const cuisineId = [201, 202, 203, 204, 205, 206, 207, 208, 209, 210]
+const cuisineId = [201, 202, 203, 204, 205, 206, 207, 208, 210]
 
 let chefCuisineObj = {
   chefCuisine_id: 300,

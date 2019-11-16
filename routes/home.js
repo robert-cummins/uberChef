@@ -16,7 +16,7 @@ router.get("/:id", (req, res) => {
       })
   } else {
 
-    db.getChefsByLocation(location)
+    db.getChefCuisinesbyLocation(location)
       .then(chef => {
         res.render('location', { chefs: chef })
       })

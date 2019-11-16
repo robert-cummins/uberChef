@@ -34,9 +34,11 @@ body {
 }
 
 .chef-img {
-    width: 100%;
+    width: 90%;
     height: 15vw;
     object-fit: cover;
+    border-radius: 35%;
+    margin-top: 20%;
 }
 
 .chef-container{
@@ -44,8 +46,10 @@ body {
 }
 
 .chef-name{
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
+    font-size: 20px;
+    margin-left: 3%;
 }
 
 .chef-page-img{
@@ -57,3 +61,25 @@ body {
     margin-right: 5px;
 }
 
+.icon {
+    width:15%;
+    height:15%;
+    margin-left: 8%;
+  
+    
+}
+
+.cuisine-container {
+    display: flex;
+    margin-top: 10px;
+    
+}
+
+.cuisine-text{
+    color: #e67e22;
+    font-size: 20px;
+}
+
+.cuisine-submit{
+    margin-left: 5px;
+}
