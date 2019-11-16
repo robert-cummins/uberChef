@@ -53,8 +53,11 @@ body {
 }
 
 .chef-page-img{
-    width: 28vw;
-    margin-top: 10vh;
+    width: 70%;
+    margin-top: 20vh;
+    margin-left: 10vw;
+    border-radius: 35%;
+    
 }
 
 .main-select{
@@ -82,4 +85,13 @@ body {
 
 .cuisine-submit{
     margin-left: 5px;
+}
+
+.ind-chef{
+    text-align: center;
+    margin-top: 5Vh;
+}
+
+li {
+    list-style-type: none;
 }

@@ -25,7 +25,7 @@ exports.seed = function(knex) {
     users.push(createChefCuisine())
     
   }
-  console.log(users)
+ 
     
   return knex('chefCuisine').del()
     .then(function () {
