@@ -1,25 +1,35 @@
+const faker = require('faker')
+
+const cuisineId = [201, 202, 203, 204, 205, 206, 207, 208, 210]
+
+let chefCuisineObj = {
+  chefCuisine_id: 300,
+  chef_id: 0,
+  cuisine_id: 201
+}
+
+const createChefCuisine = () => {
+  return chefCuisineObj ={
+    chefCuisine_id: chefCuisineObj.chefCuisine_id +1,
+    chef_id: chefCuisineObj.chef_id + 1,
+    cuisine_id: faker.random.arrayElement(cuisineId)
+  }
+}
+
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
+  const users = []
+  const usersNum = 100
+  for(let i = 0; i < usersNum; i++){
+    users.push(createChefCuisine())
+    
+  }
+  console.log(users)
+    
   return knex('chefCuisine').del()
     .then(function () {
       // Inserts seed entries
-      return knex('chefCuisine').insert([
-        {chefCuisine_id: 300, chef_id: 100, cuisine_id: 201},
-        {chefCuisine_id: 301, chef_id: 100, cuisine_id: 204},
-        {chefCuisine_id: 302, chef_id: 100, cuisine_id: 207},
-        {chefCuisine_id: 303, chef_id: 101, cuisine_id: 203},
-        {chefCuisine_id: 304, chef_id: 101, cuisine_id: 202},
-        {chefCuisine_id: 305, chef_id: 101, cuisine_id: 206},
-        {chefCuisine_id: 306, chef_id: 102, cuisine_id: 201},
-        {chefCuisine_id: 307, chef_id: 102, cuisine_id: 207},
-        {chefCuisine_id: 308, chef_id: 102, cuisine_id: 209},
-        {chefCuisine_id: 309, chef_id: 103, cuisine_id: 210},
-        {chefCuisine_id: 310, chef_id: 103, cuisine_id: 208},
-        {chefCuisine_id: 311, chef_id: 103, cuisine_id: 203},
-        {chefCuisine_id: 312, chef_id: 104, cuisine_id: 207},
-        {chefCuisine_id: 313, chef_id: 104, cuisine_id: 203},
-        {chefCuisine_id: 314, chef_id: 104, cuisine_id: 205},
-      ]);
+      return knex('chefCuisine').insert(users);
     });
 };
