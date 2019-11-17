@@ -30,9 +30,5 @@ cuisineSubmit.addEventListener('click', () =>{
     console.log(location.pathname)
     anchor.href= "http://localhost:3000"+ location.pathname + '?' + cuisineSelect.value
     console.log(anchor.href)
-    // console.log(url)
-    // let selectedCuisine = cuisineSelect.value
-    // console.log(selectedCuisine)
-    // cuisineForm.action =  `${selectedCity}${selectedCuisine}`
-    // console.log(cuisineForm.action)
+    
 })

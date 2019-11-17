@@ -6,6 +6,11 @@ router.get('/', (req, res) => {
   res.render('home')
 })
 
+router.get('/sign-up' , (req, res) => {
+  res.render('sign-up', {})
+})
+
+
 router.get("/:id", (req, res) => {
   let location = req.params.id
   if (req.query.cuisine_id !== undefined) {
@@ -32,6 +37,7 @@ router.get("/:id/:id", (req, res) => {
       res.render('chef', { chef: chef })
     })
 })
+
 
 
 

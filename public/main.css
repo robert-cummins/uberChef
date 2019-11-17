@@ -46,7 +46,7 @@ body {
 }
 
 .chef-name{
-    text-align: left;
+    text-align: center;
     margin-top: 10px;
     font-size: 20px;
     margin-left: 3%;
@@ -81,6 +81,7 @@ body {
 .cuisine-text{
     color: #e67e22;
     font-size: 20px;
+    text-align: center;
 }
 
 .cuisine-submit{
