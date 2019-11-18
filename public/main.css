@@ -96,3 +96,7 @@ body {
 li {
     list-style-type: none;
 }
+
+.food-img{
+    width: 50vw;
+}

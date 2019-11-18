@@ -50,8 +50,13 @@ function getChefCuisinesbyLocation(location, db = database){
     
 }
 
-getChefCuisinesbyLocation('Wellington')
+function addChef(chef, db=database){
+    return db('chefs').insert(chef)
+}
 
+function addChefCuisine(chefCuisine, db=database){
+    return db('chefCuisine').insert(chefCuisine)
+}
 
 module.exports = {
     getAllChefs,
@@ -60,6 +65,8 @@ module.exports = {
     getChefsByCuisine,
     getChefCuisinesbyLocation,
     getChefById,
-    getChefsByCuisineAndLocation
+    getChefsByCuisineAndLocation,
+    addChef,
+    addChefCuisine
 }
 

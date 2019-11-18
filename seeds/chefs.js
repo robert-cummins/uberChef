@@ -22,7 +22,6 @@ exports.seed = function(knex) {
     users.push(createFakeUser())
     
   }
-  console.log(users)
   return knex('chefs').del()
     .then(function () {
       // Inserts seed entries
