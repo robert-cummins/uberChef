@@ -6,7 +6,7 @@ exports.up = function(knex) {
       table.string('location')
       table.string('img')
       table.string('email')
-      table.string('bio')
+      table.string('bio', 5000)
       table.string('foodImg1')
       table.string('foodImg2')
       table.string('foodImg3')
