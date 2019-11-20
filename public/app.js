@@ -28,7 +28,7 @@ cuisineSubmit.addEventListener('click', () =>{
     console.log(anchor.href)
     location = getImageDirectoryByFullURL(url)
     console.log(location.pathname)
-    anchor.href= "http://localhost:3000"+ location.pathname + '?' + cuisineSelect.value
+    anchor.href= "https://uber-chef.herokuapp.com"+ location.pathname + '?' + cuisineSelect.value
     console.log(anchor.href)
     
 })
