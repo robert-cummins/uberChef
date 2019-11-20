@@ -10,6 +10,13 @@ router.get('/sign-up' , (req, res) => {
   res.render('sign-up', {})
 })
 
+router.get("/update-chef/:id", (req, res) => {
+  db.getChefById(req.params.id)
+  .then(chef => {
+    res.render('update', {chef:chef})
+  })
+  
+});
 
 router.get("/:id", (req, res) => {
   let location = req.params.id
@@ -58,6 +65,37 @@ router.post("/", (req, res) => {
   })
 
 })
+
+router.post("/delete-chef/:id", (req, res) => {
+  db.deleteChef(req.params.id).then(() => {
+    res.redirect("/");
+  });
+});
+
+
+
+router.post("/update-chef/:id", (req, res) => {
+  let updatedChef = {
+    name: req.body.name,
+    img: req.body.chefImg,
+    email: req.body.email,
+    location: req.body.location,
+    bio: req.body.bio,
+    foodImg1: req.body.img1,
+    foodImg2: req.body.img2,
+    foodImg3: req.body.img3,
+  }
+
+  db.updateChef(req.params.id, updatedChef)
+  .then(el => {
+    let updateChefCuisine = {
+      chef_id: req.params.id,
+      cuisine_id: req.body.cuisine
+    }
+    db.updateChefCuisne(req.params.id, updateChefCuisine)
+    .then(() => res.redirect('/' + updatedChef.location + '/' + req.params.id))
+  })
+});
 
 
 

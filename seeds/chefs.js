@@ -2,17 +2,29 @@
 const faker = require('faker')
 
 const cities = ['Wellington', 'Auckland', 'Christchurch', 'Hamilton']
+const searchTermsArray = ['man', 'woman', 'profile', 'chef', 'kitchen', 'chefs', 'nature', 'dinner', 'food', 'people', 'cake', 'lunch', 'brunch', 'breakfast' ]
+const food = ['dinner', 'food', 'cake', 'lunch', 'brunch', 'breakfast', 'dessert']
 
 const createFakeUser = () =>({
   name: faker.name.findName(),
   location: faker.random.arrayElement(cities),
-  img: faker.image.avatar(),
+  img: 'https://source.unsplash.com/800x450/?' + getArrayItem(),
   email: faker.internet.email(),
   bio: faker.lorem.paragraphs(),
-  foodImg1: faker.image.food(),
-  foodImg2: faker.image.food(),
-  foodImg3: faker.image.food(),
+  foodImg1: 'https://source.unsplash.com/800x450/?' + getFoodArrayItem(),
+  foodImg2: 'https://source.unsplash.com/800x450/?' + getFoodArrayItem(),
+  foodImg3: 'https://source.unsplash.com/800x450/?' + getFoodArrayItem(),
 })
+
+function getArrayItem () {
+  randomNumber = Math.floor(Math.random()*14)
+  return searchTermsArray[randomNumber]
+}
+
+function getFoodArrayItem () {
+  randomNumber = Math.floor(Math.random()*7)
+  return food[randomNumber]
+}
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries

@@ -58,6 +58,18 @@ function addChefCuisine(chefCuisine, db=database){
     return db('chefCuisine').insert(chefCuisine)
 }
 
+function deleteChef(id, db=database){
+    return db('chefs').where('chef_id', id).delete()
+}
+
+function updateChef(id, chef, db=database){
+    return db('chefs').where('chef_id', id).update(chef)
+}
+
+function updateChefCuisne(id, chefCuisine, db=database){
+    return db('chefCuisine').where('chef_id', id).update(chefCuisine)
+}
+
 module.exports = {
     getAllChefs,
     getAllCuisines,
@@ -67,6 +79,9 @@ module.exports = {
     getChefById,
     getChefsByCuisineAndLocation,
     addChef,
-    addChefCuisine
+    addChefCuisine,
+    deleteChef,
+    updateChef,
+    updateChefCuisne
 }
 

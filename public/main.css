@@ -100,3 +100,19 @@ li {
 .food-img{
     width: 50vw;
 }
+
+.chef-button{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 5%; */
+}
+
+#delete{
+    margin-top: 7vh !important;
+    margin-left: 5vw !important;
+}
+
+#update {
+    margin-top: 7vh !important;
+    margin-left: 5vw !important;
+}
