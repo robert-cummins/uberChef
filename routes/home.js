@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../dbFunctions')
-
+const passport = require('passport')
 router.get('/', (req, res) => {
   res.render('home')
 })
@@ -9,6 +9,17 @@ router.get('/', (req, res) => {
 router.get('/sign-up' , (req, res) => {
   res.render('sign-up', {})
 })
+
+router.get('/login' , (req, res) => {
+  res.render('log-in', {})
+})
+
+router.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true})
+);
+
 
 router.get("/update-chef/:id", (req, res) => {
   db.getChefById(req.params.id)
